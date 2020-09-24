@@ -1,0 +1,57 @@
+.font
+{
+    font-family: 'Roboto Slab', serif;
+}
+
+.color
+{
+    background-color: bisque;
+}
+
+#twit-form
+{
+    padding: 30px;
+    border: 1px solid;
+    height: 300px;
+}
+
+#form-container
+{
+    padding-top:50px;
+}
+
+.twitformheadline
+{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.publicorhidden
+{
+    position: relative;
+    float: right;
+    padding-right: 5px;
+}
+.submitbutton
+{
+    position: relative;
+    float: right;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+#author
+{
+    position: relative;
+    float: right;
+    padding-right: 5px;
+    width: 300px;
+}
+
+#twit-text
+{
+    position: relative;
+    float: right;
+    padding-right: 5px;
+    width: 300px;
+}

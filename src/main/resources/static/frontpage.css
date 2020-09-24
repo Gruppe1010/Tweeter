@@ -1,0 +1,111 @@
+body
+{
+    margin: 0;
+    /*!!!!Kun for at teste sticky!!!!*/
+    height: 10000px;
+    /*!!!!Kun for at teste sticky!!!!*/
+}
+
+.logo
+{
+    color: black;
+    position: relative;
+    margin: auto;
+    font-size: 50px;
+    text-align: center;
+}
+
+.menubar
+{
+    position: -webkit-sticky; /*Så det også virker i Safari*/
+    position: sticky;
+    top: 0; /*Ellers virker den ikke. Måske fordi sticky først initialiseres når toppen er nul?*/
+    z-index: 2; /*For at menubaren altid er forrest på siden*/
+    border-top: 3px solid #222;
+    border-bottom: 3px solid #222;
+    padding-top: 13px; /*For at give luft om bogstaverne*/
+    padding-bottom: 13px; /*For at give luft om bogstaverne*/
+    background-color: bisque;
+}
+
+.menubarheadline
+{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    display: inline;
+    padding: 10px 0 10px 70px;
+}
+
+a.linkmenubarheadline:link
+{
+    color: #222;
+    text-decoration: none;
+}
+
+a.linkmenubarheadline:visited
+{
+    color: #222;
+}
+
+a.linkmenubarheadline:hover
+{
+    color: #222;
+    text-decoration: underline;
+}
+
+/* Bruges ikke med billede logo
+a.logo:link
+{
+    color: black;
+    text-decoration: none;
+}
+a.logo:visited
+{
+    color: black;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FRA VORES GAMLE
+a.linkmenubar:link
+{
+    color: #222;
+    text-decoration: none;
+}
+
+a.linkmenubar:visited
+{
+    color: #222;
+}
+
+a.linkmenubar:hover
+{
+    color: white;
+}
+
+div.menubarheadline:hover
+{
+    background-color: #222;
+    transition: 0.5s ease;
+}
+
+div.menubarheadline:hover a
+{
+    color: white;
+}
+*/

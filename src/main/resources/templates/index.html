@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Tweeter </title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Dette er en dårlig efterligning af Twitter"/>
+    <!-- css-filer -->
+    <link href="/frontpage.css" type="text/css" rel="stylesheet">
+    <link href="/twitform.css" type="text/css" rel="stylesheet">
+    <link href="/hiddenpage.css" type="text/css" rel="stylesheet">
+    <!-- bootstraaaaap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--Font-->
+    <link rel="stylesheet" id="google-fonts-2-css" href="https://fonts.googleapis.com/css?family=Roboto+Slab&ver=5.3" type="text/css" media="all">
+</head>
+<body>
+<div class="logo">
+    <img src="https://squirrelbasket.files.wordpress.com/2014/01/lapwing.jpg" alt="Vores seje logo" class="logo">
+    <!--<a href="/" class="logo"> THIS IS OUR MAGNIFICENT LOGO</a>--!>
+</div>
+<div class="menubar">
+    <span class="menubarheadline"><a class="linkmenubarheadline" href="/"> Front page </a></span>
+    <span class="menubarheadline"><a class="linkmenubarheadline" href="/hiddenPage"> Hidden twits </a></span>
+</div>
+
+
+<div class="container font">
+    <div class="row">
+        <!-- Kolonne til inputfelt -->
+        <div class="col">
+            <div id="form-container">
+                <!-- Dette er en form
+                Vi laver @PostMapping("/postCatFact") i Controlleren for at lave et endpoint - pga. denne form -->
+                <form id="twit-form" action="/postTwit" method="post">
+                    <h5 class="twitformheadline">Make a twit</h5>
+                    <!-- Tekst til inputfeltet i browser -->
+                    <label for="author">Author:</label>
+                    <!--
+                    <input> Laver input-felt
+                    type="text" == Siger hvilket input der tages imod i inputfeltet
+                    id="catfact" == Kalder bestemt styling vi har i css-filen
+                    name="catfact" == giver inputtet vi får ind referencenavnet, catfact -->
+                    <input type="text" id="author" name="authorinput" class="color"><br><br>
+                    <!-- Laver et inputfelt med boolsk værdi: enten er der trykket submit eller også er der ikke-->
+
+                    <label for="twit-text">Write twit:</label>
+                    <!--
+                    <input> Laver input-felt
+                    type="text" == Siger hvilket input der tages imod i inputfeltet
+                    id="catfact" == Kalder bestemt styling vi har i css-filen
+                    name="catfact" == giver inputtet vi får ind referencenavnet, catfact -->
+                    <input type="text" id="twit-text" name="twittextinput" class="color"><br><br>
+                    <!-- Laver et inputfelt med boolsk værdi: enten er der trykket submit eller også er der ikke-->
+                    <span>Hide twit: </span>
+                    <div class="publicorhidden">
+                        <input type="radio" id="hidden" name="publicorhiddeninput" value="hidden" class="color"> <!--value == sikkert den String som den returnerer - måske-->
+                        <label for="hidden">Yes&nbsp;&nbsp;&nbsp;</label>
+                        <input type="radio" id="public" name="publicorhiddeninput" value="public" class="color">
+                        <label for="public">No</label>
+                    </div><br><br>
+
+                    <input type="submit" value="Submit" class="submitbutton">
+                </form>
+            </div>
+        </div>
+        <!-- Ny kolonne til den info jeg vil gerne vil vise - den som brugeren giver mig-->
+        <div class="col">
+            <div id="form-container">
+            <!-- Jeg skal give den en context -->
+            <!-- th:each == for-each loop
+            = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
+            skal den gøre det der står inde i <p>-tagget -->
+            <p th:each="catFact : ${catFactList}">
+                <span>Catfact number: </span>
+                <span th:text="${catFact.getID()}"></span>
+                <span>: </span>
+                <span th:text="${catFact.getFactText()}"></span>
+            </p>
+            <!-- tidligere: <p th:text="${firstCatFact.printList()}"></p> --><!-- firstCatFact.getFactText() -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
