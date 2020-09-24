@@ -9,10 +9,10 @@ body
 .logo
 {
     color: black;
-    position: relative;
-    margin: auto;
     font-size: 50px;
     text-align: center;
+    position: relative;
+    margin: auto;
 }
 
 .menubar
@@ -38,18 +38,18 @@ body
     padding: 10px 0 10px 70px;
 }
 
-a.linkmenubarheadline:link
+a.linkmenubarheadline:link /*for at style linkene skulle a have sin egen klasse*/
 {
     color: #222;
     text-decoration: none;
 }
 
-a.linkmenubarheadline:visited
+a.linkmenubarheadline:visited /*for at style linkene skulle a have sin egen klasse*/
 {
     color: #222;
 }
 
-a.linkmenubarheadline:hover
+a.linkmenubarheadline:hover /*for at style linkene skulle a have sin egen klasse*/
 {
     color: #222;
     text-decoration: underline;

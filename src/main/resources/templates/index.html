@@ -16,11 +16,12 @@
 <body>
 <div class="logo">
     <img src="https://squirrelbasket.files.wordpress.com/2014/01/lapwing.jpg" alt="Vores seje logo" class="logo">
-    <!--<a href="/" class="logo"> THIS IS OUR MAGNIFICENT LOGO</a>--!>
+    <!--<a href="/" class="logo"> THIS IS OUR MAGNIFICENT LOGO</a>-->
 </div>
 <div class="menubar">
-    <span class="menubarheadline"><a class="linkmenubarheadline" href="/"> Front page </a></span>
-    <span class="menubarheadline"><a class="linkmenubarheadline" href="/hiddenPage"> Hidden twits </a></span>
+    <!--for at style linkene skulle a have sin egen klasse-->
+    <a class="linkmenubarheadline" href="/"><span class="menubarheadline"> Front page </span></a>
+    <a class="linkmenubarheadline" href="/hiddenPage"><span class="menubarheadline"> Hidden twits </span></a>
 </div>
 
 
@@ -66,17 +67,17 @@
         <!-- Ny kolonne til den info jeg vil gerne vil vise - den som brugeren giver mig-->
         <div class="col">
             <div id="form-container">
-            <!-- Jeg skal give den en context -->
-            <!-- th:each == for-each loop
-            = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
-            skal den gøre det der står inde i <p>-tagget -->
-            <p th:each="catFact : ${catFactList}">
-                <span>Catfact number: </span>
-                <span th:text="${catFact.getID()}"></span>
-                <span>: </span>
-                <span th:text="${catFact.getFactText()}"></span>
-            </p>
-            <!-- tidligere: <p th:text="${firstCatFact.printList()}"></p> --><!-- firstCatFact.getFactText() -->
+                <!-- Jeg skal give den en context -->
+                <!-- th:each == for-each loop
+                = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
+                skal den gøre det der står inde i <p>-tagget -->
+                <p th:each="catFact : ${catFactList}">
+                    <span>Catfact number: </span>
+                    <span th:text="${catFact.getID()}"></span>
+                    <span>: </span>
+                    <span th:text="${catFact.getFactText()}"></span>
+                </p>
+                <!-- tidligere: <p th:text="${firstCatFact.printList()}"></p> --><!-- firstCatFact.getFactText() -->
             </div>
         </div>
     </div>
