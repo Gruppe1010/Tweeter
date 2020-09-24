@@ -66,19 +66,16 @@
         </div>
         <!-- Ny kolonne til den info jeg vil gerne vil vise - den som brugeren giver mig-->
         <div class="col">
-            <div id="form-container">
-                <!-- Jeg skal give den en context -->
-                <!-- th:each == for-each loop
-                = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
-                skal den gøre det der står inde i <p>-tagget -->
-                <p th:each="catFact : ${catFactList}">
-                    <span>Catfact number: </span>
-                    <span th:text="${catFact.getID()}"></span>
-                    <span>: </span>
-                    <span th:text="${catFact.getFactText()}"></span>
-                </p>
-                <!-- tidligere: <p th:text="${firstCatFact.printList()}"></p> --><!-- firstCatFact.getFactText() -->
-            </div>
+            <!-- Jeg skal give den en context -->
+            <!-- th:each == for-each loop
+            = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
+            skal den gøre det der står inde i <p>-tagget -->
+            <p th:each="catFact : ${catFactList}">
+                <span>Catfact number: </span>
+                <span th:text="${catFact.getID()}"></span>
+                <span>: </span>
+                <span th:text="${catFact.getFactText()}"></span>
+            </p>
         </div>
     </div>
 </div>
