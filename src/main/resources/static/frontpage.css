@@ -19,7 +19,7 @@ body
 {
     position: -webkit-sticky; /*Så sticky også virker i Safari*/
     position: sticky;
-    top: 0; /*Ellers virker den ikke. Virker om den er 0, 20px, 999 osv. Hvorfor, ved kan jeg ikke finde svar på*/
+    top: 0; /*Ellers virker den ikke. Virker om den er 0, 20px, 999 osv. Hvorfor, kan jeg ikke finde svar på*/
     z-index: 2; /*For at menubaren altid er forrest på siden*/
     border-top: 3px solid #222;
     border-bottom: 3px solid #222;
