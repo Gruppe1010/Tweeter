@@ -10,8 +10,8 @@
 
 #twit-form
 {
-    padding: 30px;
-    border: 1px solid;
+    padding: 20px 30px 30px 30px;
+    border: 3px solid;
     height: 300px;
 }
 
@@ -23,7 +23,7 @@
 .twitformheadline
 {
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }
 
 .publicorhidden

@@ -8,14 +8,19 @@ public class Twit
     private String author;
     private String twitText;
     private String publicOrPrivate;
-    
+
     // constructor
-    public Twit(Date creationDate, String author, String twitText,  String publicOrPrivate)
+    public Twit(Date creationDate, String author, String twitText, String publicOrPrivate)
     {
         this.creationDate = creationDate;
         this.author = author;
-        this.twitText = twitText;
+        this.twitText = "\"" + twitText + "\"";
         this.publicOrPrivate = publicOrPrivate;
+    }
+
+    public Twit()
+    {
+
     }
     
     // getters og setters

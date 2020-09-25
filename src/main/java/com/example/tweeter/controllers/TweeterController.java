@@ -15,14 +15,16 @@ public class TweeterController
 {
     private ArrayList<Twit> publicTwitList = new ArrayList<Twit>();
     private ArrayList<Twit> hiddenTwitList = new ArrayList<Twit>();
-    
-    
+
     
     @GetMapping("/")
     public String index(Model twitModel)
     {
-        
-        
+
+        twitModel.addAttribute("publicTwitList", publicTwitList);
+        //SLET DEM NÅR VI HAR TESTET
+        publicTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "public"));
+        hiddenTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "hidden"));
         return "index";
     }
     
@@ -33,16 +35,18 @@ public class TweeterController
         Twit twit = new Twit(new Date(), dataFromTwitForm.getParameter("authorinput"), dataFromTwitForm.getParameter(
                 "twittextinput"), dataFromTwitForm.getParameter("publicorhiddeninput"));
         
-        if(twit.getPublicOrPrivate().equals("No"))
+        if(twit.getPublicOrPrivate().equalsIgnoreCase("Public"))
         {
             publicTwitList.add(twit);
+            //System.out.println(publicTwitList);
         }
         else
         {
             hiddenTwitList.add(twit);
+            //System.out.println(hiddenTwitList.get(0).getPublicOrPrivate());
         }
-        
-    
+            //System.out.println(hiddenTwitList.get(0).getAuthor());
+
         return "redirect:/";
     }
     

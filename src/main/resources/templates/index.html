@@ -8,6 +8,8 @@
     <link href="/frontpage.css" type="text/css" rel="stylesheet">
     <link href="/twitform.css" type="text/css" rel="stylesheet">
     <link href="/hiddenpage.css" type="text/css" rel="stylesheet">
+    <link href="/publictwits.css" type="text/css" rel="stylesheet">
+
     <!-- bootstraaaaap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!--Font-->
@@ -15,7 +17,7 @@
 </head>
 <body>
 <div class="logo">
-    <img src="https://squirrelbasket.files.wordpress.com/2014/01/lapwing.jpg" alt="Vores seje logo" class="logo">
+    <img src="https://squirrelbasket.files.wordpress.com/2014/01/lapwing.jpg" alt="Logo.PNG" class="logo">
     <!--<a href="/" class="logo"> THIS IS OUR MAGNIFICENT LOGO</a>-->
 </div>
 <div class="menubar">
@@ -66,6 +68,17 @@
         </div>
         <!-- Ny kolonne til den info jeg vil gerne vil vise - den som brugeren giver mig-->
         <div class="col">
+            <div class="twitcontainer">
+                <div class="postedtwits">
+                    <h5 class="publictwitsheadline">Public twits</h5>
+                    <p th:each="twit : ${publicTwitList}" class="twit">
+                        <span th:text="${twit.getTwitText()}" class="twittext"></span><br>
+                        <span class="twitauthoranddate">-</span>
+                        <span th:text="${twit.getAuthor()}" class="twitauthoranddate">, </span>
+                    </p>
+
+                </div>
+            </div>
             <!-- Jeg skal give den en context -->
             <!-- th:each == for-each loop
             = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
