@@ -15,7 +15,6 @@ public class TweeterController
 {
     private ArrayList<Twit> publicTwitList = new ArrayList<Twit>();
     private ArrayList<Twit> hiddenTwitList = new ArrayList<Twit>();
-
     
     @GetMapping("/")
     public String index(Model twitModel)
@@ -45,6 +44,8 @@ public class TweeterController
             hiddenTwitList.add(twit);
             //System.out.println(hiddenTwitList.get(0).getPublicOrPrivate());
         }
+        
+        //
             //System.out.println(hiddenTwitList.get(0).getAuthor());
 
         return "redirect:/";

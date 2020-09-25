@@ -72,7 +72,7 @@
                 <div class="postedtwits">
                     <h5 class="publictwitsheadline">Public twits</h5>
                     <p th:each="twit : ${publicTwitList}" class="twit">
-                        <span th:text="${twit.getTwitText()}" class="twittext"></span><br>
+                        <span th:text="${twit.getTwitTextWithCitation()}" class="twittext"></span><br>
                         <span class="twitauthoranddate">-</span>
                         <span th:text="${twit.getAuthor()}" class="twitauthoranddate">, </span>
                     </p>
