@@ -40,6 +40,7 @@ public class TweeterController
     public String postTwit(WebRequest dataFromTwitForm)
     {
         
+        //Find ud af hvordan vi gemmer dato i vores ArrayList fra HMTL form
         Twit twit = new Twit(new Date(), dataFromTwitForm.getParameter("authorinput"), dataFromTwitForm.getParameter(
                 "twittextinput"), dataFromTwitForm.getParameter("publicorhiddeninput"));
         
