@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Tweeter </title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Dette er en dårlig efterligning af Twitter"/>
+    <!-- css-filer -->
+    <link href="/frontpage.css" type="text/css" rel="stylesheet">
+    <link href="/twitform.css" type="text/css" rel="stylesheet">
+    <link href="/hiddenpage.css" type="text/css" rel="stylesheet">
+    <link href="/twits.css" type="text/css" rel="stylesheet">
+
+    <!-- bootstraaaaap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--Font-->
+    <link rel="stylesheet" id="google-fonts-2-css" href="https://fonts.googleapis.com/css?family=Roboto+Slab&ver=5.3" type="text/css" media="all">
+</head>
+<body>
+<div class="logo">
+    <img src="https://squirrelbasket.files.wordpress.com/2014/01/lapwing.jpg" alt="Logo.PNG" class="logo">
+    <!--<a href="/" class="logo"> THIS IS OUR MAGNIFICENT LOGO</a>-->
+</div>
+<div class="menubar">
+    <!--for at style linkene skulle a have sin egen klasse-->
+    <a class="linkmenubarheadline" href="/"><span class="menubarheadline"> Front page </span></a>
+    <a class="linkmenubarheadline" href="/hiddenPage/"><span class="menubarheadline"> Hidden twits </span></a>
+</div>
+
+<div class="container font">
+    <div class="row">
+        <div class="col">
+            <div class="hiddentwitcontainer">
+                <div class="postedtwits">
+                    <h5 class="twitsheadline">Hidden twits</h5>
+                    <p th:each="twit : ${hiddenTwitList}" class="twit">
+                        <span th:text="${twit.getTwitTextWithCitation()}" class="twittext"></span><br>
+                        <span th:text="${twit.getAuthorWithAt()}" class="twitauthoranddate"> </span>
+                        <span th:text="${twit.getFormattedCreationDate()}" class="twitauthoranddate"> </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 
 @Controller
@@ -19,12 +21,19 @@ public class TweeterController
     @GetMapping("/")
     public String index(Model twitModel)
     {
-
         twitModel.addAttribute("publicTwitList", publicTwitList);
         //SLET DEM NÅR VI HAR TESTET
-        publicTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "public"));
-        hiddenTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "hidden"));
+        //publicTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "public"));
         return "index";
+    }
+    
+    @GetMapping("/hiddenPage")
+    public String hiddenPage(Model twitModel)
+    {
+        twitModel.addAttribute("hiddenTwitList", hiddenTwitList);
+        //SLET DEM NÅR VI HAR TESTET
+        //hiddenTwitList.add(new Twit(new Date(), "Hejejejejsa ", "Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa Hejejejejsa ", "hidden"));
+        return "hiddenpage";
     }
     
     @PostMapping("/postTwit")
@@ -36,12 +45,13 @@ public class TweeterController
         
         if(twit.getPublicOrPrivate().equalsIgnoreCase("Public"))
         {
-            publicTwitList.add(twit);
+            publicTwitList.add(0, twit);
             //System.out.println(publicTwitList);
         }
+
         else
         {
-            hiddenTwitList.add(twit);
+            hiddenTwitList.add(0, twit);
             //System.out.println(hiddenTwitList.get(0).getPublicOrPrivate());
         }
         

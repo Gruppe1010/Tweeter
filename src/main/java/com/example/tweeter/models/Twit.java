@@ -1,5 +1,6 @@
 package com.example.tweeter.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Twit
@@ -60,4 +61,16 @@ public class Twit
         return "\"" + twitText + "\"";
     }
     
+    public String getAuthorWithAt()
+    {
+        return "@" + author;
+    }
+    
+    public String getFormattedCreationDate()
+    {
+        SimpleDateFormat formattedCreationDate = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        //formattedCreationDate.format(creationDate);
+        String dateString = formattedCreationDate.format(new Date());
+        return " - " + dateString;
+    }
 }

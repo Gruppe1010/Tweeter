@@ -8,7 +8,7 @@
     <link href="/frontpage.css" type="text/css" rel="stylesheet">
     <link href="/twitform.css" type="text/css" rel="stylesheet">
     <link href="/hiddenpage.css" type="text/css" rel="stylesheet">
-    <link href="/publictwits.css" type="text/css" rel="stylesheet">
+    <link href="/twits.css" type="text/css" rel="stylesheet">
 
     <!-- bootstraaaaap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -23,7 +23,7 @@
 <div class="menubar">
     <!--for at style linkene skulle a have sin egen klasse-->
     <a class="linkmenubarheadline" href="/"><span class="menubarheadline"> Front page </span></a>
-    <a class="linkmenubarheadline" href="/hiddenPage"><span class="menubarheadline"> Hidden twits </span></a>
+    <a class="linkmenubarheadline" href="/hiddenPage/"><span class="menubarheadline"> Hidden twits </span></a>
 </div>
 
 
@@ -70,25 +70,14 @@
         <div class="col">
             <div class="twitcontainer">
                 <div class="postedtwits">
-                    <h5 class="publictwitsheadline">Public twits</h5>
+                    <h5 class="twitsheadline">Public twits</h5>
                     <p th:each="twit : ${publicTwitList}" class="twit">
                         <span th:text="${twit.getTwitTextWithCitation()}" class="twittext"></span><br>
-                        <span class="twitauthoranddate">-</span>
-                        <span th:text="${twit.getAuthor()}" class="twitauthoranddate">, </span>
+                        <span th:text="${twit.getAuthorWithAt()}" class="twitauthoranddate"> </span>
+                        <span th:text="${twit.getFormattedCreationDate()}" class="twitauthoranddate"> </span>
                     </p>
-
                 </div>
             </div>
-            <!-- Jeg skal give den en context -->
-            <!-- th:each == for-each loop
-            = for hver catFact på listen catFactList(som er navnet tilføjet i en addAttribute ovre i Controlleren)
-            skal den gøre det der står inde i <p>-tagget -->
-            <p th:each="catFact : ${catFactList}">
-                <span>Catfact number: </span>
-                <span th:text="${catFact.getID()}"></span>
-                <span>: </span>
-                <span th:text="${catFact.getFactText()}"></span>
-            </p>
         </div>
     </div>
 </div>

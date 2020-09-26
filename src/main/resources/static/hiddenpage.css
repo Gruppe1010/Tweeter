@@ -1,0 +1,53 @@
+body
+{
+    margin: 0;
+}
+
+.logo
+{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.menubar
+{
+    position: -webkit-sticky; /*Så sticky også virker i Safari*/
+    position: sticky;
+    top: 0; /*Ellers virker den ikke. Virker om den er 0, 20px, 999 osv. Hvorfor, kan jeg ikke finde svar på*/
+    z-index: 2; /*For at menubaren altid er forrest på siden*/
+    border-top: 3px solid #222;
+    border-bottom: 3px solid #222;
+    padding-top: 13px; /*For at give luft om bogstaverne*/
+    padding-bottom: 13px; /*For at give luft om bogstaverne*/
+    background-color: bisque;
+}
+
+.menubarheadline
+{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    display: inline;
+    padding: 10px 0 10px 70px;
+}
+
+a.linkmenubarheadline:link /*for at style linkene skulle a have sin egen klasse*/
+{
+    color: #222;
+    text-decoration: none;
+}
+
+a.linkmenubarheadline:visited /*for at style linkene skulle a have sin egen klasse*/
+{
+    color: #222;
+}
+
+a.linkmenubarheadline:hover /*for at style linkene skulle a have sin egen klasse*/
+{
+    color: #222;
+    text-decoration: underline;
+}
